@@ -9,16 +9,14 @@ import ErrorPage from 'pages/ErrorPage';
 
 function App() {
   return (
-    // <div className="App">
-      <Router>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </Router>
-    /* </div> */
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 }
 
