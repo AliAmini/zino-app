@@ -1,8 +1,14 @@
 import React, {FC} from 'react';
 import css from "./Typography.module.scss";
 
-export const EmptyText: FC = () => {
+interface Props {
+  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined
+}
+export const EmptyText: FC<Props> = ({
+  onClick
+}) => {
+
   return (
-    <div className={css.inlineEmpty}></div>
+    <div className={css.inlineEmpty} onClick={onClick}></div>
   );
 };

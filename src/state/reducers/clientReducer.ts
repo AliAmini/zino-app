@@ -1,19 +1,27 @@
 import { AnyAction } from 'redux';
+import * as actionNames from 'state/enums';
 import {Client} from "types/client";
 
-interface clientState {
-  client: Client
+export interface ClientState {
+  info: Client | null,
+  registered: boolean
 }
 
-const initialState: clientState = {
-  client: {}
+const initialState: ClientState = {
+  info: null,
+  registered: false
 }
 
-const clientReducer = (prevState: clientState = initialState, action: AnyAction) => {
+const clientReducer = (prevState: ClientState = initialState, action: AnyAction) => {
   switch (action.type) {
-    case "updateClient":
-        return {...prevState.client, ...action.payload};
+    case actionNames.UPDATE_CLIENT_INFO:
+        return {...prevState, info: {...prevState.info, ...action.payload}};
       break;
+
+    case actionNames.CLIENT_IS_REGISTERED:
+      return {...prevState, registered: action.payload};
+      break;
+      
   
     default:
       return prevState;

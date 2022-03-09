@@ -1,9 +1,17 @@
 import { EmptyText } from 'components/Typography';
-import React, {FC} from 'react';
+import React, {FC, useMemo} from 'react';
 import { Link } from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
+import { clientSelector } from 'state/selectors';
 import css from './Nav.module.scss';
+import useActions from 'state/action-creators';
 
 const Nav: FC = () => {
+  const client = useSelector(clientSelector);
+  const dispatch = useDispatch();
+
+  const clientFullName = [client?.firstName, client?.lastName].join(' ').trim();
+
   return (
     <div className={css.nav}>
       <ul className={css.leftList}>
@@ -24,7 +32,12 @@ const Nav: FC = () => {
 
       <ul className={css.rightList}>
         <li className={css.bold}>
-          Hello, <EmptyText />
+          Hello, {
+            clientFullName?
+              clientFullName
+            :
+              <EmptyText />
+          }
         </li>
       </ul>
     </div>

@@ -11,11 +11,13 @@ function App() {
   return (
     <Router>
       <Nav />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+      <main className="page-main">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </main>
     </Router>
   );
 }

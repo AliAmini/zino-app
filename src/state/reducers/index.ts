@@ -1,7 +1,10 @@
 import {combineReducers} from "redux";
-import clientReducer from "./clientReducer";
+import clientReducer, { ClientState } from "./clientReducer";
 
-const reducers = combineReducers({
+export interface AppReducers {
+  client: ClientState
+}
+const reducers = combineReducers<AppReducers>({
   client: clientReducer,
 });
 
