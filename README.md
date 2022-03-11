@@ -1,5 +1,4 @@
 ## Zino app
----
 React/Redux App as interview assignment for Zino Company.
 
 ---
