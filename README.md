@@ -21,26 +21,34 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Used Technologies
 
-### `yarn eject`
+- **TypeScript** (Using TypeScript make the code documented in the code. It's a lot better that jsDoc blocks or external documentation.)
+- **React@^17**
+- **React-Redux@^7** 
+\
+  Using Redux for state managment. This version of Redux allows us to use `useSelector()` and `useDispatch()` hooks for state management)
+- **Redux-thunk** and Action creators
+\
+  This module allows us to use `async` actions. It's easy-to-use than Redux-Saga.)
+- **Antd@^4**
+\
+  framework for UI
+- CSS Module & SASS
+- Well organized structure
+- Clean Code
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Other Features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Using Routes
+- Real-time updating client name in the top menu.
+- Implement test for `App.tsx`
+- Strong Types for Functions and variables (Using TypeScript)
+- Strong State Management Structure (Using Redux) that can be used in large-scale apps
