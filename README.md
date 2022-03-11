@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+## Zino app
+---
+React/Redux App as interview assignment for Zino Company.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
 ## Available Scripts
 
@@ -27,6 +29,7 @@ Builds the app for production to the `build` folder.
 
 ## Used Technologies
 
+- Created by `Create React App`
 - **TypeScript** (Using TypeScript make the code documented in the code. It's a lot better that jsDoc blocks or external documentation.)
 - **React@^17**
 - **React-Redux@^7** 
