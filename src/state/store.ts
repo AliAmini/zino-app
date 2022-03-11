@@ -1,5 +1,5 @@
 import {createStore, applyMiddleware} from 'redux';
-import reducers from './reducers';
+import reducers, { AppReducers } from './reducers';
 import thunk from "redux-thunk";
 
 export const store = createStore(
@@ -7,4 +7,12 @@ export const store = createStore(
   {},
   applyMiddleware(thunk)
 );
+
+export const getStore = (initialState?: AppReducers | undefined) => {
+  return createStore(
+    reducers,
+    initialState? initialState : {},
+    applyMiddleware(thunk)
+  );
+};
 

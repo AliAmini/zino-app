@@ -1,15 +1,17 @@
 import { AnyAction } from 'redux';
-import * as actionNames from 'state/enums';
-import {Client} from "types/client";
+import * as actionNames from 'state/enums/actionNames';
+import {ClientAddress, Client, RegisterStatus} from "types/client";
 
 export interface ClientState {
-  info: Client | null,
-  registered: boolean
+  info: Client | undefined,
+  registerStatus: RegisterStatus
+  addressInfo: ClientAddress | undefined
 }
 
 const initialState: ClientState = {
-  info: null,
-  registered: false
+  info: undefined,
+  registerStatus: "personalInformation",
+  addressInfo: undefined,
 }
 
 const clientReducer = (prevState: ClientState = initialState, action: AnyAction) => {
@@ -18,11 +20,14 @@ const clientReducer = (prevState: ClientState = initialState, action: AnyAction)
         return {...prevState, info: {...prevState.info, ...action.payload}};
       break;
 
-    case actionNames.CLIENT_IS_REGISTERED:
-      return {...prevState, registered: action.payload};
+    case actionNames.REGISTER_STATUS:
+      return {...prevState, registerStatus: action.payload};
       break;
       
-  
+    case actionNames.UPDATE_CLIENT_ADDRESS_INFO:
+      return {...prevState, addressInfo: {...prevState.addressInfo, ...action.payload}};
+      break;
+
     default:
       return prevState;
       break;

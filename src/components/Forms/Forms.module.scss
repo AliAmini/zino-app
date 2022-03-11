@@ -1,7 +1,58 @@
 .form {
   border: 3px solid var(--green-light);
   border-radius: 5px;
-  color: #fff;
+  // color: #fff;
   padding: 30px;
   padding-bottom: 10px;
+  margin-bottom: 10px;
+
+  :global {
+    .ant-form-item-label {
+      min-width: 170px;
+      padding-right: 10px;
+    }
+
+    .ant-picker {
+      width: 100%;
+    }
+
+    .btns {
+      display: flex;
+      padding-top: 10px;
+      .ant-form-item-control-input-content {display: flex;}
+      
+      .ant-btn {
+        flex: 1;
+
+        &:not(:first-child) {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.pageTitle {font-size: 2.6rem; margin-bottom: 35px;}
+
+.informationBlock {
+  text-align: left;
+  margin-bottom: 20px;
+  
+  .informationTitle {
+    line-height: 25px;
+    border-radius: 25px;
+    background-color: var(--yellow);
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 3px 10px;
+  }
+
+  ul {
+    li {
+      display: flex;
+      margin-bottom: 5px;
+
+      > span {min-width: 155px; margin-right: 10px;}
+    }
+  }
 }

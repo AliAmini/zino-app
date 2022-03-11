@@ -1,9 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import {TestComponentWrapper} from 'utils/test.helpr';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+test('renders <App /> and find logo text', async () => {
+  render(
+    <TestComponentWrapper>
+      <App />
+    </TestComponentWrapper>
+  );
+
+  const logo = screen.getByText('Technology Company');
+  expect(logo).toBeInTheDocument();
 });

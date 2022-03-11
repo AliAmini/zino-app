@@ -1,12 +1,15 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { clientSelector, isRegisteredSelector } from 'state/selectors';
+import { clientSelector, registerStatusSelector } from 'state/selectors';
 import {Button} from 'antd';
+import { RegisterStatus } from 'types/client';
 
 const HomePage: FC = () => {
-  const isRegistered = useSelector(isRegisteredSelector);
+  const registerStatus: RegisterStatus = useSelector(registerStatusSelector);
   const client = useSelector(clientSelector);
+
+  const isRegistered = registerStatus === "registered";
 
   return (
     <div>
@@ -17,14 +20,15 @@ const HomePage: FC = () => {
           <h2>Please Register</h2>
           <p>
             You've not registered in Zino yet...
-
-            <hr />
-            <Link to="/register" className="btn">
-              <Button type="primary">
-                Go to Register Page 
-              </Button>
-            </Link>
           </p>
+          <hr />
+          <div>
+              <Link to="/register" className="btn">
+                <Button type="primary">
+                  Go to Register Page 
+                </Button>
+              </Link>
+          </div>
         </>
       }
     </div>
