@@ -50,14 +50,10 @@ const PersonalInfoForm: FC<Props> = () => {
 
   /************** Form Submit ****************/
   const handleFormSubmit = (values: Client) => {
+    updateClient(values);
 
-    const newClientData: Client = {
-      ...values,
-    };
 
-    console.log('=== newClientData', newClientData);
-
-    updateClient(newClientData);
+    /**** API Call Here | for saving the data in the database ****/
 
     /**** Update Page State ****/
     updateRegisterStatus("addressInformation"); // next level

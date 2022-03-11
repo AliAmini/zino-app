@@ -5,7 +5,7 @@ import PersonalInfoForm from 'components/Forms/PersonalInfoForm';
 import React, { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useActions from 'state/action-creators';
-import { registerStatusSelector } from 'state/selectors';
+import { clientSelector, registerStatusSelector } from 'state/selectors';
 import css from "./RegisterPage.module.scss";
 
 interface Props {
@@ -14,6 +14,8 @@ interface Props {
 
 const RegisterPage: FC<Props> = () => {
   const registerStatus = useSelector(registerStatusSelector);
+  const client = useSelector(clientSelector);
+  const fullName = [client?.firstName, client?.lastName].join(' ').trim();
 
   const renderMainForm = () : JSX.Element => {
     switch (registerStatus) {
@@ -32,7 +34,7 @@ const RegisterPage: FC<Props> = () => {
       default:
         return (
           <div>
-            <h2>Your registration is completed!</h2>
+            <h2>{fullName}, Your registration is completed!</h2>
           </div>
         );
         break;

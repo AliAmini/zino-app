@@ -39,7 +39,7 @@ const AddressForm: FC<Props> = () => {
 
 
   /* Fns */
-  
+
   const handleBack: React.MouseEventHandler<HTMLElement> = () => {
     updateRegisterStatus("personalInformation");
   }
@@ -49,7 +49,9 @@ const AddressForm: FC<Props> = () => {
     
     updateClientAddress(values);
 
-    /**** Update Page State ****/
+    /**** API Call Here | for saving the data in the database ****/
+
+    /**** Update Page Status ****/
     updateRegisterStatus("confirmation"); // next level
   };
 

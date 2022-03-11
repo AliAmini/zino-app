@@ -25,7 +25,7 @@ const ConfirmInformationForm: FC = () => {
   
   return (
     <>
-      <h3 className={css.pageTitle}></h3>
+      <h3 className={css.pageTitle}>Review Information</h3>
 
       <div className={css.form}>
 
